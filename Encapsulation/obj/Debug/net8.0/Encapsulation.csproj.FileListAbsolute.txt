@@ -1,0 +1,14 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\bin\Debug\net8.0\Encapsulation.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\bin\Debug\net8.0\Encapsulation.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\bin\Debug\net8.0\Encapsulation.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\bin\Debug\net8.0\Encapsulation.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\bin\Debug\net8.0\Encapsulation.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\refint\Encapsulation.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\Encapsulation.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Encapsulation\obj\Debug\net8.0\ref\Encapsulation.dll

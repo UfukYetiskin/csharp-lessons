@@ -1,0 +1,14 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\bin\Debug\net8.0\Collections.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\bin\Debug\net8.0\Collections.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\bin\Debug\net8.0\Collections.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\bin\Debug\net8.0\Collections.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\bin\Debug\net8.0\Collections.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\refint\Collections.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\Collections.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\Collections\obj\Debug\net8.0\ref\Collections.dll

@@ -1,0 +1,14 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\bin\Debug\net8.0\FirstLessons.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\bin\Debug\net8.0\FirstLessons.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\bin\Debug\net8.0\FirstLessons.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\bin\Debug\net8.0\FirstLessons.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\bin\Debug\net8.0\FirstLessons.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\refint\FirstLessons.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\FirstLessons.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\FirstLessons\obj\Debug\net8.0\ref\FirstLessons.dll

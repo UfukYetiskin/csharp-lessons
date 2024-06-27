@@ -1,0 +1,14 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\bin\Debug\net8.0\ObjectOriententedProgramming.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\bin\Debug\net8.0\ObjectOriententedProgramming.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\bin\Debug\net8.0\ObjectOriententedProgramming.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\bin\Debug\net8.0\ObjectOriententedProgramming.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\bin\Debug\net8.0\ObjectOriententedProgramming.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\refint\ObjectOriententedProgramming.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ObjectOriententedProgramming.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-course-lessons\ObjectOriententedProgramming\obj\Debug\net8.0\ref\ObjectOriententedProgramming.dll

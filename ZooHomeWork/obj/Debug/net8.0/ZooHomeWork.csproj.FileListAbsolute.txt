@@ -1,0 +1,15 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\bin\Debug\net8.0\ZooHomeWork.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\bin\Debug\net8.0\ZooHomeWork.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\bin\Debug\net8.0\ZooHomeWork.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\bin\Debug\net8.0\ZooHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\bin\Debug\net8.0\ZooHomeWork.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.sourcelink.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\refint\ZooHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ZooHomeWork.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\ZooHomeWork\obj\Debug\net8.0\ref\ZooHomeWork.dll

@@ -1,0 +1,15 @@
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\bin\Debug\net8.0\AirlinesHomeWork.exe
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\bin\Debug\net8.0\AirlinesHomeWork.deps.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\bin\Debug\net8.0\AirlinesHomeWork.runtimeconfig.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\bin\Debug\net8.0\AirlinesHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\bin\Debug\net8.0\AirlinesHomeWork.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.AssemblyInfoInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.AssemblyInfo.cs
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.csproj.CoreCompileInputs.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.sourcelink.json
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\refint\AirlinesHomeWork.dll
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.pdb
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\AirlinesHomeWork.genruntimeconfig.cache
+C:\Users\ufuky\Desktop\github-repos\csharp-lessons\AirlinesHomeWork\obj\Debug\net8.0\ref\AirlinesHomeWork.dll

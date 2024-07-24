@@ -44,6 +44,29 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast") // Uç noktaya kolayca başvurmak için bir isim veriliyor
 .WithOpenApi(); // Bu uç noktanın OpenAPI dokümantasyonunda görünmesini sağlar
 
+
+//Get isteği geldiği zaman çalışacak olan bir uç nokta tanımlanıyor
+app.MapGet("/deneme", () => {
+    var users = new[] {
+        new { Id = 1, Name = "Ali" },
+        new { Id = 2, Name = "Veli" },
+        new { Id = 3, Name = "Deli" }
+    };
+    return users;
+}).WithName("Deneme").WithOpenApi();
+
+//Get isteği geldiği zaman id parametresi ile çalışacak olan bir uç nokta tanımlanıyor
+app.MapGet("/deneme/{id}", (int id) => {
+    var users = new[] {
+        new { Id = 1, Name = "Ali" },
+        new { Id = 2, Name = "Veli" },
+        new { Id = 3, Name = "Deli" }
+    };
+    return users.FirstOrDefault(x => x.Id == id);
+}).WithName("DenemeId").WithOpenApi();
+
+
+
 // Uygulama çalışma zamanında HTTP isteklerini dinlemeye başlıyor
 app.Run();
 

@@ -317,3 +317,86 @@ Genel olarak aşağıdaki 3 ortam için appsettings dosyaları uygulama içerisi
 - Development : Uygulama geliştirme aşamasında kullanılacak ayarlar için bu ortam kullanılır.
 - Test (Staging): Geliştirilmesi tamamlanmış test edilme aşamasında kullanılacak ayarlar için bu ortam kullanılır.
 - Production : Geliştirilmesi ve testi tamamlanmış gerçek ortamda kullanılacak ayarlar için bu ortam kullanılır.
+
+#### Swagger ve SwaggerUI Nedir?
+
+Swagger, API'lerinizi tanımlamanıza, oluşturmanıza, belgelemenize ve tüketmenize yardımcı olan bir araç setidir. .NET projelerinde kullanılan Swagger ve Swagger UI, geliştirdiğiniz API'lerin belgelenmesini ve test edilmesini kolaylaştırır.
+
+Swagger UI'nin Faydaları;
+- API endpointlerini görsel arayüzde listeler.
+- API'leri doğrudan web tarayıcısından test etmenizi sağlar.
+- API belgelerini otomatik olarak oluşturur.
+
+##### .NET 8 ile Swagger UI Kullanımı
+<b>Program.cs Dosyasındaki Swagger Ayarları</b>
+
+Swagger'ın .NET 8 WebAPI projesinde kullanılması için genellikle Program.cs dosyasında aşağıdaki kod yer alır:
+
+```
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+```
+
+<b>Swagger UI'nin Çalıştığı Portu Doğrulama ve Kontrol Etme</b>
+
+Projenizde Swagger UI'nin hangi portta çalıştığını kontrol etmek için aşağıdaki adımları izleyebilirsiniz:
+
+- LaunchSettings.json Dosyasını Kontrol Et: Bu dosya, uygulamanızın çalıştırılacağı URL ve port bilgilerini içerir. Properties klasörü altındaki launchSettings.json dosyasını açın ve aşağıdaki gibi yapılandırılmış olmalıdır:
+
+```
+"profiles": {
+    "http": {
+        "commandName": "Project",
+        "dotnetRunMessages": true,
+        "launchBrowser": true,
+        "applicationUrl": "http://localhost:5003",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+    },
+    "https": {
+        "commandName": "Project",
+        "dotnetRunMessages": true,
+        "launchBrowser": true,
+        "applicationUrl": "https://localhost:7003",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+    }
+}
+```
+- Tarayıcıdan Erişim: Uygulamanızı çalıştırdıktan sonra web tarayıcınızda http://localhost:5003/swagger URL'sini ziyaret ederek Swagger UI'ye erişim sağlayabilirsiniz.
+- Terminal veya Output Penceresi: Projenizi çalıştırdığınızda terminal veya output penceresinde uygulamanın hangi portlarda dinlediğini belirten mesajlar olacaktır. Bu mesajlar da mevcut ayarları doğrulamak için kullanılabilir.
+
+<b>Özelleştirmeler</b>
+
+Swagger UI'yi daha fazla özelleştirmek isterseniz, UseSwaggerUI metodu içindeki çeşitli parametreler ile yapılandırmalar yapabilirsiniz:
+
+```
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    options.RoutePrefix = string.Empty; // root URL'de Swagger UI gösterimi
+});
+```

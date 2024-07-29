@@ -400,3 +400,73 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty; // root URL'de Swagger UI gösterimi
 });
 ```
+
+
+## Entity Framework Nedir?
+
+Entity Framework ORM(Object Relational Mapping) araçlarından biridir. ORM nedir dersek: İlişkisel veritabanı ile nesneye yönelik programlama(OOP) arasında bir köprü görevi gören araçtır. Bu köprü, ilişkisel veritabanındaki bilgilerimizi yönetmek için nesne modellerimizi kullandığımız bir yapıdır.
+
+### Entity Framework Neden Kullanılır?
+Bir projede EntityFramework kullanmanın çeşitli nedenleri vardır:
+
+- <b> Veritabanı İşlemlerinin Kolaylaştırılması</b>
+
+EntityFramework, veritabanı ile ilgili CRUD (Create, Read, Update, Delete) işlemlerini çok daha kolay ve hızlı bir şekilde gerçekleştirmenizi sağlar. SQL yazmadan LINQ sorguları ile veritabanı işlemleri yapabilirsiniz.
+
+- <b>Otomatik Veritabanı Yönetimi</b>
+
+EF, modele dayalı olarak veritabanı şemalarını otomatik olarak oluşturabilir ve güncelleyebilir. Bu, veritabanı yönetimini önemli ölçüde basitleştirir.
+
+- <b>Bakım ve Genişletilebilirlik</b>
+
+Kod tabanını veritabanından soyutladığı için kodun bakımı ve genişletilmesi daha kolay olur. Yeni özellikler eklemek veya mevcut olanları değiştirmek daha az zahmetlidir.
+
+
+- <b>Zaman Tasarrufu</b>
+
+Kod yazarak geçirilen zamanı azaltır ve veri erişim katmanlarını hızla geliştirmeyi mümkün kılar. Bu sayede projeler daha hızlı bir şekilde tamamlanabilir.
+
+
+- <b>Performans ve Optimizasyon</b>
+
+EF, performansı optimize etmek için çeşitli yöntemler sunar. Lazy Loading, Eager Loading ve Explicit Loading gibi özelliklerle verilerin ne zaman ve nasıl çekileceğini kontrol edebilirsiniz.
+
+- <b>Test Edilebilirlik</b>
+
+Mocking araçlarıyla birlikte kullanılabilen EntityFramework, birim test yazma süreçlerini kolaylaştırır.
+
+- <b>Topluluk ve Destek</b>
+
+Geniş bir kullanıcı topluluğuna ve sağlam dokümantasyona sahiptir. Sorunlarla karşılaştığınızda çevrimiçi destek bulmanız daha kolaydır.
+
+
+<b>Örnek Kod</b>
+
+Aşağıda, EF kullanarak basit bir Product sınıfının nasıl oluşturulup kullanılabileceğine dair bir örnek yer almaktadır:
+
+```
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+}
+
+public class AppDbContext : DbContext
+{
+    public DbSet<Product> Products { get; set; }
+}
+
+// EF kullanarak veri ekleme
+using (var context = new AppDbContext())
+{
+    var product = new Product
+    {
+        Name = "Laptop",
+        Price = 999.99m
+    };
+    
+    context.Products.Add(product);
+    context.SaveChanges();
+}
+```

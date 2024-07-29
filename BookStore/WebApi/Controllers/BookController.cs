@@ -1,31 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
+using WebApi.DBOperations;
 
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("books")]
-
+    [Route("[controller]")]
     public class BookController : ControllerBase
     {
-        private static readonly List<Book> books = new List<Book>
+        private readonly BookStoreDbContext _context;
+        public BookController(BookStoreDbContext context)
         {
-            new Book(1, "The Great Gatsby", "F. Scott Fitzgerald", 1925, "Novel"),
-            new Book(2, "To Kill a Mockingbird", "Harper Lee", 1960, "Novel"),
-            new Book(3, "1984", "George Orwell", 1949, "Dystopian"),
-            new Book(4, "Pride and Prejudice", "Jane Austen", 1813, "Novel")
-        };
+            _context = context;
+        }
 
-        [HttpGet("/")]
+        [HttpGet]
         public ActionResult<IEnumerable<Book>> GetBooks()
         {
+            var books = _context.Books.ToList();
+            if (books == null || !books.Any())
+            {
+                return NotFound("No books found."); // Geçici hata mesajı
+            }
+
             return Ok(books);
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<Book> GetBookById(int id)
         {
-            var book = books.Find(b => b.Id == id);
+            var book = _context.Books.SingleOrDefault(book => book.Id == id);
 
             if (book == null)
             {
@@ -35,23 +40,25 @@ namespace WebApi.Controllers
             return Ok(book);
         }
 
-        [HttpPost("/")]
+        [HttpPost]
         public ActionResult AddBook(Book book)
         {
-            if(book == null)
+            var existingBook = _context.Books.SingleOrDefault(x => x.Title == book.Title);
+            if (existingBook != null)
             {
-                return BadRequest();
+                return BadRequest("Book with the same Id already exists.");
             }
-            else{
-                books.Add(book);
-                return Ok();
-            }
+
+            _context.Books.Add(book);
+            _context.SaveChanges();
+
+            return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut("{id}")]
         public ActionResult UpdateBook(int id, Book book)
         {
-            var bookToUpdate = books.Find(b => b.Id == id);
+            var bookToUpdate = _context.Books.SingleOrDefault(x => x.Id == id);
 
             if (bookToUpdate == null)
             {
@@ -63,22 +70,26 @@ namespace WebApi.Controllers
             bookToUpdate.Year = book.Year;
             bookToUpdate.Genre = book.Genre;
 
-            return Ok();
+            _context.SaveChanges();
+
+            // Return the updated book
+            return Ok(bookToUpdate);
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         public ActionResult DeleteBook(int id)
         {
-            var bookToDelete = books.Find(b => b.Id == id);
+            var book = _context.Books.SingleOrDefault(x => x.Id == id);
 
-            if (bookToDelete == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            books.Remove(bookToDelete);
+            _context.Books.Remove(book);
+            _context.SaveChanges();
 
-            return Ok();
+            return NoContent();
         }
     }
 }

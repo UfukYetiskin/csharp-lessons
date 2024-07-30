@@ -470,3 +470,129 @@ using (var context = new AppDbContext())
     context.SaveChanges();
 }
 ```
+
+### Linq Metotlar
+
+LINQ (Language-Integrated Query), .NET Framework'te veri sorgulama ve manipülasyon işlemlerini daha kolay ve verimli bir şekilde yapmamızı sağlayan güçlü bir araçtır. LINQ, koleksiyonlar üzerinde sorgulamalar yapmanızı sağlar ve SQL benzeri bir sorgulama diline sahiptir.
+
+LINQ metotları genellikle iki kategoriye ayrılır:
+- Sorgu Söz Dizimi (Query Syntax)
+- Metot Söz Dizimi (Method Syntax)
+
+<b>Temel LINQ Metotları</b>
+
+<b>Where</b>
+
+Belirtilen koşulu sağlayan elemanları filtreler
+
+```
+var filteredList = myList.Where(item => item.Age > 18)
+```
+
+<b>Select</b>
+
+Koleksiyonda bulunan elementler kullanılarak yeni bir koleksiyon oluşturulur.
+SelectMany – anahtar sözcüğü iki koleksiyonda bulunan ortak alanlara göre birleştirilmesi sonucunda yeni koleksiyon oluşturur. 
+```
+var names = myList.Select(item => item.Name)
+```
+
+<b>OrderBy ve OrderByDecending</b>
+
+- OrderBy, Bir koleksiyon ögelerinin artan yada azalan sıraya göre listelenmesini sağlar. 
+- OrderByDescending – Koleksiyonda bulunan verilerin belirtilen parametrelerine göre azalan olarak listelenmesini sağlar.
+
+```
+var sortedList = myList.OrderBy(item => item.Name);
+var sortedListDesc = myList.OrderByDescending(item => item.Name);
+```
+
+<b>GroupBy</b>
+
+Koleksiyondaki verilerin gruplanması için kullanılır.
+```
+var groupedByAge = myList.GroupBy(item => item.Age);
+```
+
+<b>Join</b>
+
+En az iki koleksiyonun birbirleri ile matche edilmesi için kullanılır. Oluşan matche sonucunda yeni bir koleksiyon oluşur.
+GroupJoin – İki koleksiyonda bulunan ortak alanlara göre eşleştirilerek birleştirir.
+```
+var joinedList = from item1 in list1
+                 join item2 in list2 on item1.Id equals item2.ItemId
+                 select new { item1.Name, item2.Description };
+```
+
+<b>Sum, Average, Min, Max</b>
+
+Sum – Koleksiyondaki tam sayıların toplar.
+Max – Koleksiyondaki en büyük sayısal elemanı bulur.
+Min – Koleksiyondaki en küçük sayısal elemanı bulur.
+Count – Koleksiyondaki eleman sayısını Int32 türünde verir.
+LongCount – Koleksiyondaki eleman sayısını Int64 türünde verir.
+Average – Koleksiyondaki sayısal değerlerin ortalamasını hesaplar.
+Aggregate – Koleksiyonda bulunan sayısal değerlere belirtilen  işleme göre hesaplanmasını sağlar.
+
+```
+var totalAge = myList.Sum(item => item.Age);
+var averageAge = myList.Average(item => item.Age);
+var minAge = myList.Min(item => item.Age);
+var maxAge = myList.Max(item => item.Age);
+```
+
+<b>First, FirstOrDefault, Single, SingleOrDefault</b>
+
+First – FirstOrDefault Koleksiyonda bulunan ilk veri geriye döner.
+ElementAt – ElementAtOrDefault Koleksiyonda bulunan verinin index değerine göre getirilmesini sağlar.
+Last – LastOrDefault Koleksiyonda bulunan son elemanı alır. 
+Single – SingleOrDefault Koleksiyonda bulunan bir ögeyi alır.
+
+```
+var firstItem = myList.First();
+var firstOrDefaultItem = myList.FirstOrDefault();
+var singleItem = myList.Single(item => item.Id == 1);
+var singleOrDefaultItem = myList.SingleOrDefault(item => item.Id == 1);
+```
+
+<b>Any, Contains, All</b>
+
+Any – Koleksiyonda bulunan verilerin olup olmadığını kontrol eder. Koşul ifadeleri yazılabilir.
+Contains – Koleksiyonda bulunan verilerin, belirlenen koşula göre olup olmadığını kontrol eder.
+All – Koleksiyonda bulunan tüm veriler içerisinde belirlenen koşullara göre kayıt olup olmadığını döner. 
+
+<b>Range, Repeat, Empty, DefaultIfEmpty</b>
+
+Range – Belirtilen iki değer arasındaki tam sayı değerlerinin koleksiyon halinde dönmesini sağlar.
+Repeat – Yenilenen değerleri belirtilen adette bir koleksiyonda listelenmesini sağlar. Bu değerler tekrarlananacak olan kayıtlardır. Repeat() anahtar sözcüğünde birinci argüman tekrarlanacak olan kelime, ikinci argüman ise kaç defa tekrarlanacağı sayısını ifade eder.
+Empty – Hiçbir öğe içermeyen bir koleksiyon oluşturur. Koleksiyonda herhangi bir öğe gönderilmesi istenmediği taktirde kullanılır.
+DefaultIfEmpty – Belirtilen koleksiyon boş ise varsayılan koleksiyon türüyle geriye döner
+
+
+<b>AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList</b>
+
+AsEnumerable – Koleksiyonu IEnumerable’a dönüştürür.
+AsQueryable – Koleksiyonu IQueryable olarak döndürür ve IEnumerable özellikleri de barındırır.
+Cast – Koleksiyonda bulunan veri türünü, yeni bir koleksiyonda, belirlenen veri türüne dönüştürür.
+ToArray – Koleksiyonu diziye dönüştürür.
+ToDictionary – Koleksiyon ögelerini Key, Value olacak şekilde Dictionary’e dönüştürür.
+ToList – Koleksiyonu listeye dönüştürür.
+
+<b>Take, TakeWhile, Skip, SkipWhile</b>
+
+Take – Koleksiyon içerisinden listelenecek olan veri adedini be lirtir. Sql Sorgu cümleciğinde Top() anahtar sözcüğüne eş değerdir.
+TakeWhile – Koleksiyon da bulunan verilerin, belirlenen koşul neticesinde listelenmesini sağlar
+Skip – Koleksiyon içerisinde bulunan verilerin başlangıç index’ini belirler. Belirlenen index numarasından sonraki verileri getirir.
+SkipWhile – Koleksiyonda bulunan verilerin, belirtilen koşul neticesinde başlangıç index’ine göre listelenmesini sağlar.
+
+
+<b>Distinct, Union, Intersect, Except</b>
+
+Distinct – Koleksiyon içerisinde bulunan tekrarlayan kayıtların gösterilmesini engeller.
+Union – Koleksiyonda bulunan verilerin tekrarlayanları olmadan, koleksiyon verilerini geri döner.
+Intersect – Koleksiyonda bulunan tekrarlayan kayıtların listelenmesini sağlar.
+Except – Anahtar sözcüğü, iki koleksiyonda bulunan verilerin sadece ilk koleksiyonda olup ikinci koleksiyonda olmayan kayıtları listeler.
+
+
+
+

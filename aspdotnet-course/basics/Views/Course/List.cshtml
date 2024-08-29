@@ -1,0 +1,11 @@
+@model List<Course>
+
+<ul>
+    @foreach (var kurs in Model)
+    {
+        @if(kurs.isActive){
+            @await Html.PartialAsync("_CourseCard", kurs)
+        }
+
+    }
+</ul>

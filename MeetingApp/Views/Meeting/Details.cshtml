@@ -1,0 +1,15 @@
+@model Meeting
+@{
+    ViewBag.Title = "Başvuru Detayı";
+}
+
+<main class="text-center">
+    <h1 class="h4">
+        Başvuru Detayı
+    </h1>
+    @{var durum = Model.WillAttend == true ? "Evet" : "Hayır";}
+    <p>Name: @Model.Name</p>
+    <p>Email: @Model.Email</p>
+    <p>Phone: @Model.Phone</p>
+    <p>Will Attend: @durum</p>
+</main>

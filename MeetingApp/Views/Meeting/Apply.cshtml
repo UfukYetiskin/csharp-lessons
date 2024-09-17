@@ -1,6 +1,40 @@
-<h1 class="h4">
-    Toplantı Katılım Formu
-</h1>
-<form action="#">
-    <button class="btn btn-primary text-white" type="submit">Kaydet</button>
-</form>
+<main class="">
+    <h1 class="h4 text-center">
+        Toplantı Katılım Formu
+    </h1>
+    <form method="post" action="/meeting/apply">
+    <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label for="Name" class="form-label">
+                Name
+            </label>
+            <input type="text" name="Name" id="Name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="Phone" class="form-label">
+                Phone
+            </label>
+            <input type="text" name="Phone" id="Phone" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">
+                Email
+            </label>
+            <input type="email" name="Email" id="Email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="WillAttend" class="form-label">
+                Will Attend
+            </label>
+            <select name="WillAttend" id="WillAttend" class="form-select">
+                <option value="true">
+                    Evet, Katılıyorum
+                </option>
+                <option value="false">
+                    Hayır, Katılmıyorum
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-primary text-white" type="submit">Kaydet</button>
+    </form>
+</main>

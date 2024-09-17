@@ -26,3 +26,5 @@ C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\obj\Debug\net8.0\
 C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\obj\Debug\net8.0\ref\MeetingApp.dll
 C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAssemblyInfo.cache
 C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\obj\Debug\net8.0\MeetingApp.RazorAssemblyInfo.cs
+C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\bin\Debug\net8.0\libman.json
+C:\Users\MSI-NB\Desktop\Repositories\csharp-lessons\MeetingApp\bin\Debug\net8.0\MeetingApp.staticwebassets.runtime.json

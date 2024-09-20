@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<main>
+    <div class="card card-body my-3">
+        <form asp-action="Index" method="get">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11">
+                        <select class="form-select" asp-items="ViewBag.Categories" name="category">
+                            <option value="0">Hepsi</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-sm btn-primary">Filtrele</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <table class="table table-bordered table-strip">
+        <thead>
+            <tr>
+                <th style="width:100px;">@Html.DisplayNameFor(m => m.ProductId)</th>
+                <th style="width:100px;">@Html.DisplayNameFor(m => m.Image)</th>
+                <th>@Html.DisplayNameFor(m => m.Name)</th>
+                <th style="width:100px;">@Html.DisplayNameFor(m => m.Price)</th>
+                <th style="width:140px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in @Model)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td><img src="~/img/@product.Image" class="img-fluid" alt="@product.Image"></td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="my-5 border p-4">
+        <form class="d-flex" asp-action="Index" method="post">
+            <input class="form-control mb-3" type="text" name="Name" placeholder="Ürün İsmi">
+            <input class="form-control mb-3" type="number" name="Price" placeholder="Ücret">
+            <input class="form-control mb-3" type="text" name="Image" placeholder="Image">
+
+            <!-- Hidden input to send 'false' if the checkbox is unchecked -->
+            <input type="hidden" name="IsActive" value="false" />
+
+            <label for="IsActive">Is Active</label>
+            <input class="mb-3" type="checkbox" name="IsActive" id="IsActive" value="true">
+
+            <select class="form-control mb-3" name="CategoryId">
+                <option value="1">Telefon</option>
+                <option value="2">Bilgisayar</option>
+            </select>
+
+            <button type="submit" class="btn btn-sm btn-primary">Ekle</button>
+        </form>
+
+    </div>
+</main>

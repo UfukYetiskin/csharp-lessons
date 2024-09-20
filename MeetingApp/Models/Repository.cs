@@ -22,6 +22,7 @@ namespace MeetingApp.Models{
         public static Meeting? GetById(int id){
             return _meetings.FirstOrDefault(meet => meet.Id == id);
         }
+        
 
     }
 }

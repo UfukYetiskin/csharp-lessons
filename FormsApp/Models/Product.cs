@@ -4,8 +4,9 @@ namespace FormsApp.Models{
         [Display(Name="Urun Id")]
         public int ProductId { get; set; }
         
+        [Required]
         [Display(Name="Urun Adı")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
         public decimal Price { get; set; }
 
         [Display(Name="Resim")]

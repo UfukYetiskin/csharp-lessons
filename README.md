@@ -470,6 +470,85 @@ using (var context = new AppDbContext())
     context.SaveChanges();
 }
 ```
+### Migrations Nedir?
+
+Migration, Entity Framework Core'un veritabanı şemasındaki değişiklikleri takip eden bir mekanizmadır. Migration'lar, model (entity) sınıflarınızda yaptığınız değişikliklerin, veritabanına yansıtılmasını sağlar. Veritabanı yapısını güncellemek için kullanılan bir kayıt sistemi gibidir.
+
+Örneğin, bir model sınıfına yeni bir sütun (property) eklediğinizde, veritabanındaki ilgili tabloya bu sütunun eklenmesi için bir migration oluşturursunuz. Böylece model sınıflarınız ile veritabanı yapınız senkronize olur.
+
+Migration'lar, model değişikliklerini zaman içinde aşamalı olarak uygulamanızı sağlar ve veritabanı üzerinde versiyon kontrolü sunar.
+
+## Entity Framework'ün Projeye Eklenmesi
+- Entity Framework Core Paketlerinin Eklenmesi, projeye EF Core paketlerini ekleyin. Terminalde şu komutları çalıştırarak gerekli NuGet paketlerini yükleyelim:
+```
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+```
+- DbContext Sınıfının Oluşturulması, veritabanı ile etkileşimi sağlayacak DbContext sınıfını oluşturun. Bu sınıf, veritabanı tablolarını temsil eden DbSet'ler içerir.
+
+```
+using Microsoft.EntityFrameworkCore;
+
+namespace YourNamespace.Data {
+    public class DataContext : DbContext {
+        public DbSet<Kurs> Kurslar => Set<Kurs>();
+        public DbSet<Ogrenci> Ogrenciler => Set<Ogrenci>();
+
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+    }
+}
+```
+
+- SQLite Bağlantısının Yapılandırılması, appsettings.json dosyanıza SQLite bağlantı cümlesini ekleyin
+
+```
+{
+  "ConnectionStrings": {
+    "database": "Data Source=yourdatabase.db"
+  }
+}
+
+```
+- Ardından, Program.cs veya Startup.cs dosyanızda bağlantıyı yapılandırın
+```
+builder.Services.AddDbContext<DataContext>(options => {
+    var connectionString = builder.Configuration.GetConnectionString("database");
+    options.UseSqlite(connectionString);
+});
+```
+- Migration'ların Oluşturulması, DbContext ve modellerinizi oluşturduktan sonra, veritabanı şemasını oluşturmak için migration ekleyin:
+
+```
+dotnet ef migrations add InitialCreate
+```
+
+- Veritabanını Güncelleme (Database Update), Migration'ı uygulayarak veritabanını oluşturun veya güncelleyin:
+```
+dotnet ef database update
+```
+
+- Model Sınıflarının Oluşturulması, Veritabanı tablolarını temsil eden entity sınıflarını oluşturun
+```
+public class Kurs {
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+public class Ogrenci {
+    public int Id { get; set; }
+    public string FullName { get; set; }
+}
+```
+
+- Veritabanı İşlemleri DbContext kullanarak veritabanı işlemleri yapabilirsiniz
+```
+using (var context = new DataContext()) {
+    var kurs = new Kurs { Name = "Yazılım Geliştirme" };
+    context.Kurslar.Add(kurs);
+    context.SaveChanges();
+}
+```
 
 ### Linq Metotlar
 

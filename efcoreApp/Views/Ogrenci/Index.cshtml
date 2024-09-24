@@ -1,0 +1,25 @@
+@model List<efcoreApp.Data.Ogrenci>
+<main class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Ad</th>
+      <th scope="col">Soyad</th>
+      <th scope="col">Eposta</th>
+      <th scope="col">Telefon</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var ogrenci in @Model){
+    <tr>
+        <th scope="row">@ogrenci.OgrenciId</th>
+        <td>@ogrenci.OgrenciAd</td>
+        <td>@ogrenci.OgrenciSoyad</td>
+        <td>@ogrenci.Eposta</td>
+        <td>@ogrenci.Telefon</td>
+    </tr>
+    }
+  </tbody>
+</table>
+</main>

@@ -1,0 +1,20 @@
+@model List<efcoreApp.Data.Kurs>
+
+<main class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Başlık</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var kurs in @Model){
+    <tr>
+        <th scope="row">@kurs.KursId</th>
+        <td>@kurs.Baslik</td>
+    </tr>
+    }
+  </tbody>
+</table>
+</main>

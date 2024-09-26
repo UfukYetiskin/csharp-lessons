@@ -1,4 +1,4 @@
-@model List<efcoreApp.Data.Kurs>
+@model IEnumerable<Kurs>
 
 <main class="container">
     <table class="table">
@@ -6,6 +6,7 @@
     <tr>
       <th scope="col"></th>
       <th scope="col">Başlık</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +14,18 @@
     <tr>
         <th scope="row">@kurs.KursId</th>
         <td>@kurs.Baslik</td>
+        <td class="d-flex">
+          <a asp-controller="Kurs" asp-action="Edit" asp-route-id="@kurs.KursId" class="btn btn-sm btn-primary mx-2">Düzenle</a>
+          <form asp-controller="Kurs" asp-action="DeleteKurs" asp-route-id="@kurs.KursId" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+          </form>
+        </td>
     </tr>
     }
   </tbody>
 </table>
+<div>
+  <a asp-controller="Kurs" asp-action="Create">Kurs Ekle</a>
+</div>
 </main>

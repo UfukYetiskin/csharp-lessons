@@ -1,25 +1,41 @@
-@model List<efcoreApp.Data.Ogrenci>
+@model IEnumerable<Ogrenci>
 <main class="container">
     <table class="table">
   <thead>
     <tr>
+      <th scope="col">@Html.DisplayNameFor(ogrenci => ogrenci.OgrenciId)</th>
+      <th scope="col">@Html.DisplayNameFor(ogrenci => ogrenci.OgrenciAd)</th>
+      <th scope="col">@Html.DisplayNameFor(ogrenci => ogrenci.OgrenciSoyad)</th>
+      <th scope="col">@Html.DisplayNameFor(ogrenci => ogrenci.Eposta)</th>
+      <th scope="col">@Html.DisplayNameFor(ogrenci => ogrenci.Telefon)</th>
       <th scope="col"></th>
-      <th scope="col">Ad</th>
-      <th scope="col">Soyad</th>
-      <th scope="col">Eposta</th>
-      <th scope="col">Telefon</th>
     </tr>
   </thead>
   <tbody>
     @foreach(var ogrenci in @Model){
     <tr>
-        <th scope="row">@ogrenci.OgrenciId</th>
-        <td>@ogrenci.OgrenciAd</td>
-        <td>@ogrenci.OgrenciSoyad</td>
-        <td>@ogrenci.Eposta</td>
-        <td>@ogrenci.Telefon</td>
+        <th scope="row">@Html.DisplayFor(modelItem => ogrenci.OgrenciId)</th>
+        <td>@Html.DisplayFor(modelItem => ogrenci.OgrenciAd)</td>
+        <td>@Html.DisplayFor(modelItem => ogrenci.OgrenciSoyad)</td>
+        <td>@Html.DisplayFor(modelItem => ogrenci.Eposta)</td>
+        <td>@Html.DisplayFor(modelItem => ogrenci.Telefon)</td>
+        <td class="d-flex">
+          <a asp-controller="Ogrenci" asp-action="Edit" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-primary mx-2">Düzenle</a>
+          <form asp-controller="Ogrenci" asp-action="DeleteOgrenci" asp-route-id="@ogrenci.OgrenciId" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+          </form>
+          
+        </td>
     </tr>
     }
   </tbody>
 </table>
+<div class="row">
+  <button class="btn btn-sm btn-primary">
+    <a asp-controller="Ogrenci" asp-action="Create" class="text-white">
+      Ogrenci Ekle
+    </a>
+  </button>
+</div>
 </main>

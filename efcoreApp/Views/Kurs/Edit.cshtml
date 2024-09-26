@@ -1,0 +1,14 @@
+@model Kurs
+
+<main class="p-6">
+    <form asp-controller="Kurs" asp-action="Edit" method="post">
+        <input type="hidden" type="_method" value="put" />
+        <div class="mb-3">
+            <label asp-for="Baslik" class="form-label">Kurs Ad</label>
+            <input asp-for="Baslik" class="form-control" >
+        </div>
+        <div>
+            <button type="submit" class="btn btn-sm btn-primary">Ekle</button>
+        </div>
+    </form>
+</main>

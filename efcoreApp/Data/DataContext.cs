@@ -21,6 +21,7 @@ namespace efcoreApp.Data
         // 'KursKayitlari' adında bir DbSet tanımlanmıştır.
         // Bu, 'KursKayit' modelinin veritabanındaki 'KursKayitlari' tablosu ile ilişkili olduğunu belirtir.
         public DbSet<KursKayit> KursKayitlari => Set<KursKayit>();
+         public DbSet<Ogretmen> Ogretmenler => Set<Ogretmen>();
     }
 
     // Yorum olarak belirtilen, veri tabanı yaklaşımlarına dair iki önemli kavram:

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc; // ASP.NET Core MVC framework'ünü kullanmak için gerekli kütüphane.
 using efcoreApp.Data; // Projenizdeki veri erişim katmanını kullanmak için gerekli namespace.
 using Microsoft.EntityFrameworkCore; // Bu ekleme asenkron metodları kullanabilmeniz için gereklidir.
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace efcoreApp.Controllers{
     public class KursController : Controller{
@@ -10,29 +11,28 @@ namespace efcoreApp.Controllers{
         }
 
         public async Task<IActionResult> Index(){
-            var kurslar = await _context.Kurslar.ToListAsync();
+            var kurslar = await _context.Kurslar.Include(item => item.Ogretmen).ToListAsync();
             return View(kurslar);
         }
 
-        public IActionResult Create(){
+        public async Task<IActionResult> Create(){
+            ViewBag.Ogretmenler = new SelectList(await _context.Ogretmenler.ToListAsync(), "OgretmenId", "Ad");
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(Kurs kurs){
-            if(ModelState.IsValid){
                 _context.Kurslar.Add(kurs);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Kurs");
-            }
-            return View(kurs);
         }
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id){
             var kurs = await _context.Kurslar
-                .Where(krs => krs.KursId == id)
-                .FirstOrDefaultAsync();
+                .Include(item => item.KursKayitlari)
+                .ThenInclude(item => item.Ogrenci)
+                .FirstOrDefaultAsync(item => item.KursId == id);
             if(kurs == null){
                 return NotFound();
             }

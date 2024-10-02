@@ -1,11 +1,50 @@
 {
   "Version": 1,
-  "Hash": "3l+z1OkoE9DQbaq/28Bvyxl4iLHFu1+hV7ND6UkZ/Kg=",
+  "Hash": "GPqHnnYZ9239CsohkFRhr9pr7+lWSuZcfvYQnjPvLXI=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlogApp.styles.css",
+      "SourceId": "BlogApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "BlogApp.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlogApp.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
+      "SourceId": "BlogApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "BlogApp.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MSI-NB\\Desktop\\Repositories\\csharp-lessons\\BlogApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css"
+    }
+  ]
 }

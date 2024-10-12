@@ -1,6 +1,10 @@
+using ProductsApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ProductsContext>(options =>
+    options.UseSqlite("Data Source=products.db"));
 builder.Services.AddControllers();
 
 

@@ -1,10 +1,26 @@
 using ProductsApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ProductsContext>(options =>
-    options.UseSqlite("Data Source=products.db"));
+builder.Services.AddDbContext<ProductsContext>(options => options.UseSqlite("Data Source=products.db"));
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<ProductsContext>();
+
+builder.Services.Configure<IdentityOptions>(options => {
+    options.Password.RequiredLength =6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireDigit = false;
+    
+    options.User.RequireUniqueEmail = true;
+
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+});
+
 builder.Services.AddControllers();
 
 
